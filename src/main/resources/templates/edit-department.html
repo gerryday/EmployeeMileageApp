@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Edit Department</title>
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <link rel="icon" type="image/x-icon" href="../../assets/img/favicon.png" />
+        <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+    </head>
+    <body class="nav-fixed sidenav-toggled">
+        <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
+            <!-- Navbar Brand-->
+            <!-- * * Tip * * You can use text or an image for your navbar brand.-->
+            <!-- * * * * * * When using an image, we recommend the SVG format.-->
+            <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+            <a class="navbar-brand" th:href="@{/}">Employee Mileage App</a>
+            <ul class="navbar-nav align-items-center ml-auto">   
+                <!-- User Dropdown-->
+                <li class="nav-item dropdown no-caret mr-3 mr-lg-0 dropdown-user">
+                    <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="assets/img/illustrations/profiles/profile-1.png" /></a>
+                    <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
+                        <h6 class="dropdown-header d-flex align-items-center">
+                            <img class="dropdown-user-img" src="../../assets/img/illustrations/profiles/profile-1.png" />
+                            <div class="dropdown-user-details">
+                                <div class="dropdown-user-details-name">Valerie Luna</div>
+                                <div class="dropdown-user-details-email">vluna@aol.com</div>
+                            </div>
+                        </h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" th:href="@{/account}">
+                            <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
+                            Account
+                        </a>
+                        <a class="dropdown-item" href="#!">
+                            <div class="dropdown-item-icon"><i data-feather="log-out"></i></div>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_content">
+                <main>
+                    <!-- Main page content-->
+                    <div class="container mt-4">
+                        <!-- Account page navigation-->
+                        <nav class="nav nav-borders">
+                            <a class="nav-link" th:href="@{/}">Add Mileage</a>
+                            <a class="nav-link" th:href="@{/mileage}">Manage Mileage</a>
+                            <a class="nav-link" th:href="@{/user}">Users</a>
+                            <a class="nav-link" th:href="@{/employee}">Employees</a>
+                            <a class="nav-link" th:href="@{/location}">Locations</a>
+                            <a class="nav-link active ml-0" th:href="@{/department}">Departments</a>
+                            <a class="nav-link" th:href="@{/configuration}">Mileage-Rate</a>
+                        </nav>
+                        <hr class="mt-0 mb-4" />
+                        <div class="row">                           
+                            <div class="col-xl-8">
+                                <!-- Account details card-->
+                                <div class="card mb-4">
+                                    <div class="card-header">Edit Department</div>
+                                    <div class="card-body">
+                                        <form action="#" th:action="@{/update/department}" th:object="${department}" method="post">
+                                            <!-- Form Group (username)-->
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="inputUsername">Id</label>
+                                                <input class="form-control" id="inputUsername" type="text" th:field="*{id}" readonly/>
+                                            </div>
+                                            <!-- Form Group (username)-->
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="inputUsername">Name</label>
+                                                <input class="form-control" id="inputUsername" type="text" th:field="*{name}" />
+                                            </div>
+                                            <!-- Save changes button-->
+                                            <button class="btn btn-primary" type="submit">Save changes</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="footer mt-auto footer-light">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 small">Copyright &copy; Employee Mileage App 2021</div>
+                            <div class="col-md-6 text-md-right small">
+                                <a href="#!">Privacy Policy</a>
+                                &middot;
+                                <a href="#!">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../../js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+    </body>
+</html>
